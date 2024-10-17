@@ -27,4 +27,3 @@ export const Toggle = ({ handleChange, isChecked }) => {
     </div>
   );
 };
-                              
