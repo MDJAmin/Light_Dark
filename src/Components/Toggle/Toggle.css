@@ -1,0 +1,78 @@
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 2em;
+    right: 2em;
+  }
+  
+  .toggle {
+    display: none;
+  }
+  
+  .toggle-label {
+    width: 50px;
+    height: 25px;
+    background-color: transparent;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+  }
+  
+  .icon {
+    font-size: 15px;
+    transition: opacity 0.01s ease-in-out;
+    pointer-events: none;
+    position: absolute;
+  }
+  
+  .icon.sun {
+    left: 5px;
+    color: #f39c12;
+  }
+  
+  .icon.moon {
+    right: 7px;
+    color: #078de7;
+  }
+  
+  input:checked + .slider {
+    background-color: #333;
+  }
+  
+  .slider::before {
+    content: "";
+    position: absolute;
+    height: 21px;
+    width: 21px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+    left: 2px;
+  }
+  
+  input:checked + .slider::before {
+    transform: translateX(25px);
+  }
+  
+  .hidden {
+    opacity: 0;
+  }
+  
