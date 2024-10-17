@@ -1,7 +1,15 @@
-import React from 'react'
+import React from "react";
+import { useLocalStorage } from "@uidotdev/usehooks";
 import "./App.css";
-export default function App() {
+import { Toggle } from "./components/Toggle";
+
+export const App = () => {
+  const preference = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [isDark, setIsDark] = useLocalStorage("isDark", preference);
+
   return (
-    <div>App</div>
-  )
-}
+    <div className="App" data-theme={isDark ? "dark" : "light"}>
+      <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
+    </div>
+  );
+};
