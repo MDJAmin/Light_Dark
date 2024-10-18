@@ -9,6 +9,7 @@ export const App = () => {
 
   return (
     <div className="App" data-theme={isDark ? "dark" : "light"}>
+      <h1>This Will Change Color <br /> Automatically! <span>(☞ﾟヮﾟ)☞</span> </h1>
       <Toggle isChecked={isDark} handleChange={() => setIsDark(!isDark)} />
     </div>
   );
